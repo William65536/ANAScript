@@ -7,7 +7,7 @@
 | `bool`  | 1       |
 | `char`  | 1       | <!-- Support unicode later -->
 | `float` | 8       |
-| `int`   | 8       |
+| `int`   | [8, ∞)  |
 
 ## Operators
 
