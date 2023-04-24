@@ -10,18 +10,18 @@ typedef struct Position {
 
 typedef struct Token {
     enum Type {
-        TYPE_LIT_INT,
-        TYPE_LIT_FLOAT,
+        TOKEN_TYPE_LIT_INT,
+        TOKEN_TYPE_LIT_FLOAT,
 
-        TYPE_OP_PLUS,
-        TYPE_OP_MINUS,
-        TYPE_OP_TIMES,
-        TYPE_OP_DIV,
+        TOKEN_TYPE_OP_PLUS,
+        TOKEN_TYPE_OP_MINUS,
+        TOKEN_TYPE_OP_TIMES,
+        TOKEN_TYPE_OP_DIV,
 
-        TYPE_LPAREN,
-        TYPE_RPAREN,
+        TOKEN_TYPE_LPAREN,
+        TOKEN_TYPE_RPAREN,
 
-        TYPE_EOF
+        TOKEN_TYPE_EOF
     } type;
     union {
         int64_t lit_int;

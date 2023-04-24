@@ -72,35 +72,35 @@ bool TokenList_push(TokenList **self, Token token)
 void Token_print(Token self)
 {
     switch (self.type) {
-        case TYPE_LIT_INT:
+        case TOKEN_TYPE_LIT_INT:
             fputs("<LIT_INT ", stdout);
             printf("%lld", self.lit_int);
             putchar('>');
             break;
-        case TYPE_LIT_FLOAT:
+        case TOKEN_TYPE_LIT_FLOAT:
             fputs("<LIT_FLOAT ", stdout);
             printf("%g", self.lit_float);
             putchar('>');
             break;
-        case TYPE_OP_PLUS:
+        case TOKEN_TYPE_OP_PLUS:
             fputs("<OP_PLUS>", stdout);
             break;
-        case TYPE_OP_MINUS:
+        case TOKEN_TYPE_OP_MINUS:
             fputs("<OP_MINUS>", stdout);
             break;
-        case TYPE_OP_TIMES:
+        case TOKEN_TYPE_OP_TIMES:
             fputs("<OP_TIMES>", stdout);
             break;
-        case TYPE_OP_DIV:
+        case TOKEN_TYPE_OP_DIV:
             fputs("<OP_DIV>", stdout);
             break;
-        case TYPE_LPAREN:
+        case TOKEN_TYPE_LPAREN:
             fputs("<OP_LPAREN>", stdout);
             break;
-        case TYPE_RPAREN:
+        case TOKEN_TYPE_RPAREN:
             fputs("<OP_RPAREN>", stdout);
             break;
-        case TYPE_EOF:
+        case TOKEN_TYPE_EOF:
             fputs("<OP_EOF>", stdout);
             break;
         default:

@@ -92,7 +92,7 @@ ScannerException Scanner_lex_lit_int(Scanner *self)
     assert(self->itr != NULL);
     assert(self->tokens != NULL);
 
-    Token token = { .type = TYPE_LIT_INT, .pos = self->pos, .lit_int = 0 };
+    Token token = { .type = TOKEN_TYPE_LIT_INT, .pos = self->pos, .lit_int = 0 };
 
     if (!isdigit(*self->itr))
         return SCANNER_EXCEPT_FAILED_SCAN;
@@ -118,16 +118,16 @@ ScannerException Scanner_lex_op(Scanner *self)
 
     switch (*self->itr) {
         case '+':
-            token.type = TYPE_OP_PLUS;
+            token.type = TOKEN_TYPE_OP_PLUS;
             break;
         case '-':
-            token.type = TYPE_OP_MINUS;
+            token.type = TOKEN_TYPE_OP_MINUS;
             break;
         case '*':
-            token.type = TYPE_OP_TIMES;
+            token.type = TOKEN_TYPE_OP_TIMES;
             break;
         case '/':
-            token.type = TYPE_OP_DIV;
+            token.type = TOKEN_TYPE_OP_DIV;
             break;
         default:
             return SCANNER_EXCEPT_FAILED_SCAN;
@@ -151,10 +151,10 @@ ScannerException Scanner_lex_paren(Scanner *self)
 
     switch (*self->itr) {
         case '(':
-            token.type = TYPE_LPAREN;
+            token.type = TOKEN_TYPE_LPAREN;
             break;
         case ')':
-            token.type = TYPE_RPAREN;
+            token.type = TOKEN_TYPE_RPAREN;
             break;
         default:
             return SCANNER_EXCEPT_FAILED_SCAN;
@@ -180,7 +180,7 @@ ScannerException Scanner_lex_eof(Scanner *self)
 
     Scanner_incr(self, *self->itr);
 
-    if (!TokenList_push(&self->tokens, (Token) { .type = TYPE_EOF, .pos = self->pos }))
+    if (!TokenList_push(&self->tokens, (Token) { .type = TOKEN_TYPE_EOF, .pos = self->pos }))
         return SCANNER_EXCEPT_FAILED_ALLOCATION;
 
     return SCANNER_EXCEPT_NONE;
