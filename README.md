@@ -1,10 +1,18 @@
 # ANAScript
 
+## Types
+
+| Type   | Bytes |
+| ------ | --- |
+| `bool` |
+
 ## Operators
 
-| Precedence | Symbol   | Associativity | 
-| ---------- | -------  | ------------- |
-| 1          | `-`, `+` | Right-to-left |
+| Precedence | Symbol        | Names                 | Associativity | 
+| ---------- | ------------- | --------------------- | ------------- |
+| 1          | `-`, `+`      | Unary minus, plus     | Right-to-left |
+| 2          | `-`, `+`      | Addition, subtraction | Left-to-right |
+| 3          | `*`, `/`, `%` | 
 
 ## Grammar
 
