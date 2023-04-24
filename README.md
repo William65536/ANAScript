@@ -49,7 +49,7 @@ primary-numerical-expression = LIT-FLOAT | LIT-INT | "(" numerical-expression ")
 
 boolean-expression = logical-imp-expression
 logical-imp-expression = logical-or-expression "=>" logical-imp-expression | logical-or-expression
-logical-or-expression = logical-and-expression { "&&" logical-and-expression }*
+logical-or-expression = logical-and-expression { "||" logical-and-expression }*
 logical-and-expression = primary-boolean-expression { "&&" primary-boolean-expression }*
 logical-not-expression = "!" logical-not-expression | primary-boolean-expression <!-- This is incorrect! -->
 primary-boolean-expression = LIT-BOOL | "(" boolean-expression ")" | inequality-expression | equality-expression
