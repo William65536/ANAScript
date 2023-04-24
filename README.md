@@ -11,7 +11,7 @@
 | `word`  | 8       |
 | `byte`  | 1       |
 
-<!-- List types, sum types, product types, function types, union types -->
+<!-- List types, sum types, product types, function types, union types, reference types, object types -->
 
 ## Operators
 
