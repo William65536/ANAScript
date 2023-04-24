@@ -11,7 +11,15 @@
 | `word`  | 8       |
 | `byte`  | 1       |
 
-<!-- List types, sum types, product types, function types, union types, reference types, object types -->
+<!-- List types, sum types, product types, function types, union types, reference types, object types, rational types, data type types, quotations, symbols -->
+
+<!-- How should memory management work? -->
+
+<!-- Lazy evaluation - add a strict evaluation operator -->
+
+<!-- Should combinators be separate from functions? -->
+
+<!-- Should procedures be separate from pure functions? -->
 
 ## Operators
 
@@ -30,7 +38,7 @@
 | 7          | 2     | `&&`                | Logical AND                                   | Left-to-right |
 | 8          | 2     | `\|\|`              | Logical OR                                    | Left-to-right |
 | 9          | 2     | `=>`, `=<`, `<=>`   | Logical IMP, logical IF, logical IFF          | Right-to-left |
-| 10         | 3     | `? :`               | If-then-else                                  | Right-to-left |
+| 10         | 3     | `? :`               | If-then-else                                  | Right-to-left | <!-- Maybe introduce an alternative to this -->
 
 ### Descriptions
 
@@ -39,23 +47,32 @@
 - `*`, `/`, `//`, `%`: Operate on numerical types
 - `+`, `-`: Operate on numerical types
  -->
+ 
+| Type A  | Type B  | Type Out   |
+| ------- | ------- | ---------- |
+| `float` | `float` | `float`    |
+| `float` | `int`   | `float`    |
+| `int`   | `float` | `float`    |
+| `int`   | `int`   | `rational` |
+ 
 
 ## Grammar
 
 <!-- Should I express type constraints as syntactical ones? -->
 
 ```
-expression = implication-expression
-implication-expression = unary-expression "=>" implication-expression
 
 
-unary-numerical-expression = ( "+" | "-" | "!" ) unary-numerical-expression | primary-numerical-expression
-primary-numerical-expression = LIT-FLOAT | LIT-INT | "(" numerical-expression ")"
-
-boolean-expression = logical-imp-expression
-logical-imp-expression = logical-or-expression "=>" logical-imp-expression | logical-or-expression
-logical-or-expression = logical-and-expression { "||" logical-and-expression }*
-logical-and-expression = primary-boolean-expression { "&&" primary-boolean-expression }*
-logical-not-expression = "!" logical-not-expression | primary-boolean-expression <!-- This is incorrect! -->
-primary-boolean-expression = LIT-BOOL | "(" boolean-expression ")" | inequality-expression | equality-expression
+expression = ternary-expression
+if-then-else-expression =
+logical-imp-expression =
+logical-or-expression =
+logical-and-expression =
+equality-expression =
+inequality-expression =
+addition-expression =
+multiplication-expression =
+exponentiation-expression =
+unary-expression =
+primary-expression = LIT-BOOL | LIT-INT | LIT-FLOAT | "(" expression ")"
 ```
