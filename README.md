@@ -29,7 +29,7 @@
 | 6          | 2     | `==`, `!=`          | Equals to, not equals, to                     | Left-to-right |
 | 7          | 2     | `&&`                | Logical AND                                   | Left-to-right |
 | 8          | 2     | `\|\|`              | Logical OR                                    | Left-to-right |
-| 9          | 2     | `=>`, `<=`, `<=>`   | Logical IMP, logical IF, logical IFF          | Right-to-left |
+| 9          | 2     | `=>`, `=<`, `<=>`   | Logical IMP, logical IF, logical IFF          | Right-to-left |
 | 10         | 3     | `? :`               | If-then-else                                  | Right-to-left |
 
 ### Descriptions
