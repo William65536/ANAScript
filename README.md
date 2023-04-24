@@ -23,7 +23,7 @@
 | 5          | 2     | `>`, `>=`           | Greater than, greater than or equal to        | Left-to-right |
 | 6          | 2     | `==`, `!=`          | Equals to, not equals, to                     | Left-to-right |
 | 7          | 2     | `&&`                | Logical AND                                   | Left-to-right |
-| 8          | 2     | `||`                | Logical OR                                    | Left-to-right |
+| 8          | 2     | `\||`               | Logical OR                                    | Left-to-right |
 | 9          | 2     | `=>`                | Logical IMP                                   | Right-to-left |
 
 ### Descriptions
