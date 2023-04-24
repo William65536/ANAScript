@@ -8,6 +8,8 @@
 | `char`  | 1       | <!-- Support unicode later -->
 | `float` | 8       |
 | `int`   | [8, ∞)  |
+| `word`  | 8       |
+| `byte`  | 1       |
 
 ## Operators
 
